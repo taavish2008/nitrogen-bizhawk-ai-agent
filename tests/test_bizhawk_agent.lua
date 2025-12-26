@@ -161,5 +161,12 @@ function TestBizHawkAgent:test_ApplyControls_Stick_Threshold()
     luaunit.assertFalse(_G.last_joypad_set["P1 Left"])
 end
 
+function TestBizHawkAgent:test_GetResizeMode()
+    luaunit.assertEquals(agent.get_resize_mode("NES"), "crop")
+    luaunit.assertEquals(agent.get_resize_mode("SNES"), "pad")
+    luaunit.assertEquals(agent.get_resize_mode("GENESIS"), "pad") -- Default
+    luaunit.assertEquals(agent.get_resize_mode(nil), "pad") -- Nil safety check (implicit)
+end
+
 -- 3. Run Tests
 os.exit(luaunit.LuaUnit.run("TestBizHawkAgent"))

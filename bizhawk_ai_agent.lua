@@ -21,6 +21,20 @@ if CONSOLE_TYPE ~= "NES" and CONSOLE_TYPE ~= "SNES" then
 end
 console.log("System detected automatically: " .. CONSOLE_TYPE)
 
+-- Helper function to determine resize mode
+local function get_resize_mode(c_type)
+    if c_type == "NES" then
+        return "crop"
+    elseif c_type == "SNES" then
+        return "pad"
+    else
+        return "pad" -- Default
+    end
+end
+
+local RESIZE_MODE = get_resize_mode(CONSOLE_TYPE)
+console.log("Resize mode set to: " .. RESIZE_MODE)
+
 -- === CONTROL MAPPING ===
 -- Updated function: accepts ready tables of values for the current frame
 local function apply_controls_frame(btn_slice, stick_slice)
@@ -133,7 +147,7 @@ if not TESTING_MODE then
         -- 2. Read Bytes & Send Header
         local file_bytes = File.ReadAllBytes(TEMP_IMG_FILE)
         local len = file_bytes.Length
-        local json_header = string.format('{"type": "predict", "len": %d}\n', len)
+        local json_header = string.format('{"type": "predict", "len": %d, "resize_mode": "%s"}\n', len, RESIZE_MODE)
         local header_bytes = Encoding.ASCII:GetBytes(json_header)
 
         stream:Write(header_bytes, 0, header_bytes.Length)
@@ -189,5 +203,6 @@ end
 return {
     extract_numbers = extract_numbers,
     apply_controls_frame = apply_controls_frame,
+    get_resize_mode = get_resize_mode,
     set_console_type = function(t) CONSOLE_TYPE = t end
 }
