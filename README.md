@@ -2,6 +2,8 @@
 
 [![CI](https://github.com/artryazanov/nitrogen-bizhawk-ai-agent/actions/workflows/ci.yml/badge.svg)](https://github.com/artryazanov/nitrogen-bizhawk-ai-agent/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Lua 5.4](https://img.shields.io/badge/Lua-5.4-blue.svg)](https://www.lua.org/versions.html#5.4)
+[![BizHawk 2.9+](https://img.shields.io/badge/Platform-BizHawk%202.9%2B-red.svg)](https://tasvideos.org/BizHawk)
 
 This repository contains a lightweight Lua script for the **BizHawk** emulator, enabling the **NitroGen** neural network model to control gameplay in real-time.
 
