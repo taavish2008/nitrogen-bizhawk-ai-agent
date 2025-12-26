@@ -49,7 +49,8 @@ _G.joypad = {
 }
 
 _G.emu = {
-    frameadvance = function() end
+    frameadvance = function() end,
+    getsystemid = function() return "NES" end
 }
 
 -- Load luaunit

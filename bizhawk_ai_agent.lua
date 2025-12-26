@@ -12,7 +12,14 @@ local Encoding = luanet.import_type("System.Text.Encoding")
 local HOST = "127.0.0.1"
 local PORT = 5556
 local TEMP_IMG_FILE = "nitrogen_temp.png"
-local CONSOLE_TYPE = "NES" -- "SNES" or "NES"
+-- Automatically detect system
+local CONSOLE_TYPE = emu.getsystemid()
+
+if CONSOLE_TYPE ~= "NES" and CONSOLE_TYPE ~= "SNES" then
+    console.log("Error: System " .. CONSOLE_TYPE .. " is not supported by this script.")
+    return
+end
+console.log("System detected automatically: " .. CONSOLE_TYPE)
 
 -- === CONTROL MAPPING ===
 -- Updated function: accepts ready tables of values for the current frame
