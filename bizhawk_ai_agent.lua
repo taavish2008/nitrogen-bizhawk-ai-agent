@@ -12,6 +12,7 @@ local Encoding = luanet.import_type("System.Text.Encoding")
 -- === CONFIGURATION ===
 local HOST = "127.0.0.1"
 local PORT = 5556
+local ALLOW_MENU = false -- Set to true to allow AI to press Start/Select
 local TEMP_IMG_FILE = Path.Combine(Path.GetTempPath(), "nitrogen_temp.png")
 -- Automatically detect system
 local CONSOLE_TYPE = emu.getsystemid()
@@ -64,8 +65,13 @@ local function apply_controls_frame(btn_slice, stick_slice)
         joy["P1 Down"]   = (btn_slice[2]  > 0.5) or stick_down
         joy["P1 Left"]   = (btn_slice[3]  > 0.5) or stick_left
         joy["P1 Right"]  = (btn_slice[4]  > 0.5) or stick_right
-        joy["P1 Start"]  = btn_slice[20] > 0.5
-        joy["P1 Select"] = btn_slice[1]  > 0.5
+        if ALLOW_MENU then
+            joy["P1 Start"]  = btn_slice[20] > 0.5
+            joy["P1 Select"] = btn_slice[1]  > 0.5
+        else
+            joy["P1 Start"]  = false
+            joy["P1 Select"] = false
+        end
         joy["P1 L"]      = btn_slice[8]  > 0.5
         joy["P1 R"]      = btn_slice[15] > 0.5
     elseif CONSOLE_TYPE == "NES" then
@@ -75,8 +81,14 @@ local function apply_controls_frame(btn_slice, stick_slice)
         joy["P1 Down"]   = (btn_slice[2]  > 0.5) or stick_down
         joy["P1 Left"]   = (btn_slice[3]  > 0.5) or stick_left
         joy["P1 Right"]  = (btn_slice[4]  > 0.5) or stick_right
-        joy["P1 Start"]  = btn_slice[20] > 0.5
-        joy["P1 Select"] = btn_slice[1]  > 0.5
+
+        if ALLOW_MENU then
+            joy["P1 Start"]  = btn_slice[20] > 0.5
+            joy["P1 Select"] = btn_slice[1]  > 0.5
+        else
+            joy["P1 Start"]  = false
+            joy["P1 Select"] = false
+        end
     end
 
     joypad.set(joy)
