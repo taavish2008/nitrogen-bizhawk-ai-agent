@@ -64,17 +64,31 @@ end
 local function extract_numbers(json_str, key)
     local values = {}
     -- Find start of block by key "key": [
-    local s = string.find(json_str, "\"" .. key .. "\":%s*%[")
-    if not s then return values end
+    local _, s_end = string.find(json_str, "\"" .. key .. "\":%s*%[")
+    if not s_end then return values end
 
-    -- Rough but working method: read numbers starting from found position
-    -- until we meet other keys or end
-    -- Better to find the closing bracket of the array "]]"
-    local sub = string.sub(json_str, s)
-    local e = string.find(sub, "]]") -- End of outer array
+    -- Robust method: count brackets to find the end of the array
+    local sub = string.sub(json_str, s_end + 1)
+    local depth = 1
+    local e = nil
+    
+    for i = 1, #sub do
+        local c = string.sub(sub, i, i)
+        if c == "[" then 
+            depth = depth + 1
+        elseif c == "]" then 
+            depth = depth - 1 
+        end
+        
+        if depth == 0 then
+            e = i
+            break
+        end
+    end
+    
     if e then
-        sub = string.sub(sub, 1, e + 1)
-        for v in string.gmatch(sub, "[%-%d%.]+") do
+        local array_content = string.sub(sub, 1, e)
+        for v in string.gmatch(array_content, "[%-%d%.]+") do
             table.insert(values, tonumber(v))
         end
     end

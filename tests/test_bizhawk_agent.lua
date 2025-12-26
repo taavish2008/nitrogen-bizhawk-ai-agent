@@ -135,7 +135,7 @@ function TestBizHawkAgent:test_ApplyControls_SNES_ShoulderButtons()
     local joy = _G.last_joypad_set
     luaunit.assertTrue(joy["P1 L"])
     luaunit.assertTrue(joy["P1 R"])
-    luaunit.assertNil(joy["P1 A"]) -- Should be nil or false depending on initialization, script sets it specific
+    luaunit.assertFalse(joy["P1 A"]) -- Should be nil or false depending on initialization, script sets it specific
 end
 
 function TestBizHawkAgent:test_ApplyControls_Stick_Threshold()
