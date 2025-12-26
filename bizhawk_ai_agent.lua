@@ -5,7 +5,7 @@ luanet.load_assembly("System")
 
 -- Imports
 local TcpClient = luanet.import_type("System.Net.Sockets.TcpClient")
-local File = luanet.import_type("System.IO.File") 
+local File = luanet.import_type("System.IO.File")
 local Encoding = luanet.import_type("System.Text.Encoding")
 
 -- === CONFIGURATION ===
@@ -34,27 +34,27 @@ local function apply_controls_frame(btn_slice, stick_slice)
     if #btn_slice < 21 then return end
 
     if CONSOLE_TYPE == "SNES" then
-        joy["P1 B"]      = btn_slice[6]  > 0.5 
-        joy["P1 A"]      = btn_slice[19] > 0.5 
-        joy["P1 Y"]      = btn_slice[21] > 0.5 
-        joy["P1 X"]      = btn_slice[11] > 0.5 
+        joy["P1 B"]      = btn_slice[6]  > 0.5
+        joy["P1 A"]      = btn_slice[19] > 0.5
+        joy["P1 Y"]      = btn_slice[21] > 0.5
+        joy["P1 X"]      = btn_slice[11] > 0.5
         joy["P1 Up"]     = (btn_slice[5]  > 0.5) or stick_up
         joy["P1 Down"]   = (btn_slice[2]  > 0.5) or stick_down
         joy["P1 Left"]   = (btn_slice[3]  > 0.5) or stick_left
         joy["P1 Right"]  = (btn_slice[4]  > 0.5) or stick_right
-        joy["P1 Start"]  = btn_slice[20] > 0.5 
-        joy["P1 Select"] = btn_slice[1]  > 0.5 
-        joy["P1 L"]      = btn_slice[8]  > 0.5 
-        joy["P1 R"]      = btn_slice[15] > 0.5 
+        joy["P1 Start"]  = btn_slice[20] > 0.5
+        joy["P1 Select"] = btn_slice[1]  > 0.5
+        joy["P1 L"]      = btn_slice[8]  > 0.5
+        joy["P1 R"]      = btn_slice[15] > 0.5
     elseif CONSOLE_TYPE == "NES" then
-        joy["P1 A"]      = btn_slice[19] > 0.5 
-        joy["P1 B"]      = btn_slice[6]  > 0.5 
+        joy["P1 A"]      = btn_slice[19] > 0.5
+        joy["P1 B"]      = btn_slice[6]  > 0.5
         joy["P1 Up"]     = (btn_slice[5]  > 0.5) or stick_up
         joy["P1 Down"]   = (btn_slice[2]  > 0.5) or stick_down
         joy["P1 Left"]   = (btn_slice[3]  > 0.5) or stick_left
         joy["P1 Right"]  = (btn_slice[4]  > 0.5) or stick_right
-        joy["P1 Start"]  = btn_slice[20] > 0.5 
-        joy["P1 Select"] = btn_slice[1]  > 0.5 
+        joy["P1 Start"]  = btn_slice[20] > 0.5
+        joy["P1 Select"] = btn_slice[1]  > 0.5
     end
     
     joypad.set(joy)
@@ -88,8 +88,8 @@ if not TESTING_MODE then
     
     -- FIX: Rename variable to 'tcp' so we don't hide global 'client'
     local tcp = TcpClient()
-    local success, err = pcall(function() 
-        tcp:Connect(HOST, PORT) 
+    local success, err = pcall(function()
+        tcp:Connect(HOST, PORT)
     end)
     
     if not success then
