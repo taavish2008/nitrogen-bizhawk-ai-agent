@@ -10,7 +10,7 @@ This repository contains a lightweight Lua script for the **BizHawk** emulator, 
 *   **Native .NET Integration**: Uses system .NET libraries directly within BizHawk (Lua + CLR) — no external Lua DLLs required!
 *   **Smart Trajectory Handling**: Receives and executes multi-frame action sequences from the AI for smoother, less jittery gameplay.
 *   **Direct Integration**: Works via TCP sockets with [NitroGen Server](https://github.com/artryazanov/nitrogen-server).
-*   **Console Support**: Mappings configured for **NES** and **SNES**.
+*   **Console Support**: Mappings automatically detected for **NES** and **SNES**.
 
 ## 📋 Requirements
 
@@ -31,17 +31,14 @@ This repository contains a lightweight Lua script for the **BizHawk** emulator, 
         ```
     *   **Option B (Simple)**: Just download [bizhawk_ai_agent.lua](https://raw.githubusercontent.com/artryazanov/nitrogen-bizhawk-ai-agent/main/bizhawk_ai_agent.lua) to your computer.
 
-2.  **Configure the console** (Optional):
-    Open `bizhawk_ai_agent.lua` and set `CONSOLE_TYPE` to "NES" or "SNES" (default is NES).
-
-3.  **Start the server**:
+2.  **Start the server**:
     Ensure your NitroGen server is running and listening on port `5556`.
 
-4.  **Run the script**:
+3.  **Run the script**:
     - Open BizHawk and load a ROM.
     - Go to **Tools -> Lua Console**.
     - **Script -> Open Script...** -> Select `bizhawk_ai_agent.lua`.
-    - The bot should connect and start playing automatically.
+    - The bot should connect, automatically detect the system (NES/SNES), and start playing.
 
 ## ⚙️ Configuration
 You can modify the following parameters at the beginning of the script:
