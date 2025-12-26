@@ -71,21 +71,21 @@ local function extract_numbers(json_str, key)
     local sub = string.sub(json_str, s_end + 1)
     local depth = 1
     local e = nil
-    
+
     for i = 1, #sub do
         local c = string.sub(sub, i, i)
-        if c == "[" then 
+        if c == "[" then
             depth = depth + 1
-        elseif c == "]" then 
-            depth = depth - 1 
+        elseif c == "]" then
+            depth = depth - 1
         end
-        
+
         if depth == 0 then
             e = i
             break
         end
     end
-    
+
     if e then
         local array_content = string.sub(sub, 1, e)
         for v in string.gmatch(array_content, "[%-%d%.]+") do
